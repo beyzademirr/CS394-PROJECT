@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/history2">
+
+    <fragment
+        android:id="@+id/history2"
+        android:name="com.example.myapplication.purchaseList.PurchaseListFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_history_to_add"
+            app:destination="@id/add2"
+            app:popUpTo="@id/history2" />
+    </fragment>
+    <fragment
+        android:id="@+id/add2"
+        android:name="com.example.myapplication.AddPurchaseFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_add2_to_priceListFragment"
+            app:destination="@id/priceListFragment"
+            app:popUpTo="@id/add2" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceListFragment"
+        android:name="com.example.myapplication.priceList.PriceListFragment"
+        android:label="PriceListFragment"
+        tools:layout="@layout/price_list"/>
+</navigation>
